@@ -15,28 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="org\Host.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="org\Engine\RenderModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="org\Levels\LevelLoader.cpp">
+    <ClCompile Include="org\Engine\Host.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="org\Includes.h">
+    <ClInclude Include="org\Engine\Includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="org\Engine\RenderModule.h">
+    <ClInclude Include="org\Engine\Modules\Render\Render.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="org\Levels\LevelLoader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="org\Levels\Level.json" />
   </ItemGroup>
 </Project>

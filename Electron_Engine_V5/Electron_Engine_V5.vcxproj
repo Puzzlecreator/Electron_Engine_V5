@@ -141,17 +141,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="org\Levels\LevelLoader.cpp" />
-    <ClCompile Include="org\Host.cpp" />
-    <ClCompile Include="org\Engine\RenderModule.cpp" />
+    <ClCompile Include="org\Engine\Host.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="org\Levels\LevelLoader.h" />
-    <ClInclude Include="org\Includes.h" />
-    <ClInclude Include="org\Engine\RenderModule.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="org\Levels\Level.json" />
+    <ClInclude Include="org\Engine\Includes.h" />
+    <ClInclude Include="org\Engine\Modules\Render\Render.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

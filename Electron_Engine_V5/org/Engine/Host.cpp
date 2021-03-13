@@ -1,13 +1,11 @@
 // Defines For Electron Engine
-#define ELE
-#include <Includes.h>
+#include "Includes.h"
 
 // Window Class Names
 const char g_szClassName[] = "Window1";
 
 // Window Definition
 LRESULT CALLBACK WndProc(HWND hwnd, UINT umsg, WPARAM wParam, LPARAM lParam);
-
 
 // Main Control
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -33,15 +31,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (!RegisterClassEx(&wc))
 	{
-		MessageBox(NULL, (LPCWSTR)L"Window Registration Failed", (LPCWSTR)L"Error!", MB_ICONHAND | MB_OK);
+		MessageBox(NULL, L"Window Registration Failed", L"Error!", MB_ICONHAND | MB_OK);
 		return 0;
 	}
 
-	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE, (LPCWSTR)g_szClassName, (LPCWSTR)L"Untote Intern", WS_OVERLAPPEDWINDOW, 0, 0, 680, 480, NULL, NULL, hInstance, NULL);
+	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE, (LPCWSTR)g_szClassName, L"Untote Intern", WS_OVERLAPPEDWINDOW, 0, 0, 680, 480, NULL, NULL, hInstance, NULL);
 
 	if (hwnd == NULL)
 	{
-		MessageBox(NULL, (LPCWSTR)L"Window Creation Failed", (LPCWSTR)L"Error!", MB_ICONEXCLAMATION | MB_OK);
+		MessageBox(NULL, L"Window Creation Failed", L"Error!", MB_ICONEXCLAMATION | MB_OK);
 	}
 
 	ShowWindow(hwnd, nCmdShow);
@@ -61,6 +59,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT umsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (umsg)
 	{
+	case WM_LBUTTONDOWN:
+		MessageBox(NULL, L"User Panel Accessed", L"User Panel", MB_ICONASTERISK | MB_OKCANCEL);
+
+		if (WM_CANCELMODE)
+		{
+			printf("Exit Game");
+		}
 	case WM_CLOSE:
 		DestroyWindow(hwnd);
 		break;
